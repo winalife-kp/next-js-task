@@ -7,17 +7,20 @@ export default function Home() {
   const { handleToggleThemeMode, themeMode } = useContext(ThemeModeContext);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ backgroundColor: themeMode === 'dark' ? 'black' : 'white' }}
+    >
       <Head>
         <title>Create Next App</title>
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <div>
-          <button onClick={handleToggleThemeMode} color="inherit">
+          <button onClick={handleToggleThemeMode} className={styles.title}>
             {`Switch to ${themeMode === 'dark' ? 'light' : 'dark'} mode`}
           </button>
         </div>
