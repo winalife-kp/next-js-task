@@ -11,14 +11,8 @@ export default function Home() {
       className={styles.container}
       style={{ backgroundColor: themeMode === 'dark' ? 'black' : 'white' }}
     >
-      <Head>
-        <title>Create Next App</title>
-      </Head>
-
       <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>Welcome to Next.js!</h1>
         <div>
           <button onClick={handleToggleThemeMode} className={styles.title}>
             {`Switch to ${themeMode === 'dark' ? 'light' : 'dark'} mode`}
