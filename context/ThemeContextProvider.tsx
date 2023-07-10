@@ -1,9 +1,6 @@
 import { PropsWithChildren, useMemo } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
-import ThemeModeContext, {
-  ThemeModeContextInterface,
-  ThemeMode,
-} from './ThemeModeContext';
+import ThemeModeContext, { ThemeMode } from './ThemeModeContext';
 
 const ThemeContextProvider = ({ children }: PropsWithChildren) => {
   const [themeMode, setThemeMode] = useLocalStorage<ThemeMode>(
