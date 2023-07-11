@@ -8,6 +8,8 @@ const ThemeContextProvider = ({ children }: PropsWithChildren) => {
     'dark'
   );
 
+  console.log('themeMode in ThemeContextProvider(), ', themeMode);
+
   const handleToggleThemeMode = () => {
     setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
   };

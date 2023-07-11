@@ -6,6 +6,8 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
   const { handleToggleThemeMode, themeMode } = useContext(ThemeModeContext);
 
+  console.log('themeMode in Home(), ', themeMode);
+
   return (
     <div
       className={styles.container}

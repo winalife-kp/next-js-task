@@ -5,19 +5,15 @@ const useLocalStorage = <T>(
   defaultValue: T
 ): [T, Dispatch<SetStateAction<T>>] => {
   const [storedValue, setStoredValue] = useState<T>(() => {
-    const item =
-      typeof window !== 'undefined' ? localStorage.getItem(key) : undefined;
+    const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : defaultValue;
   });
 
   const setValue: Dispatch<SetStateAction<T>> = (value) => {
     const valueToStore = value instanceof Function ? value(storedValue) : value;
     setStoredValue(valueToStore);
-    if (valueToStore === undefined) {
-      localStorage.removeItem(key);
-    } else {
-      localStorage.setItem(key, JSON.stringify(valueToStore));
-    }
+    if (valueToStore === undefined) localStorage.removeItem(key);
+    else localStorage.setItem(key, JSON.stringify(valueToStore));
   };
 
   return [storedValue, setValue];
